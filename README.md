@@ -1,5 +1,4 @@
-🚀** Multi-Model Surrogate Ensemble + CMA-ES Framework**
-High-Efficiency Surrogate-Assisted Black-Box Optimization
+🚀 **Multi-Model Surrogate Ensemble + CMA-ES Framework High-Efficiency Surrogate-Assisted Black-Box Optimization**
 
 A unified framework combining multi-model surrogate ensembles with CMA-ES, designed to drastically reduce the number of expensive objective evaluations in scientific and engineering optimization.
 
@@ -52,7 +51,9 @@ Acquisition strategies guide efficient candidate selection.
 
 Surrogates are updated iteratively, improving accuracy and stability.
 
-✅ Key Features
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+✅ **Key Features**
 
 Multi-model surrogate ensemble (GP + RF + GBM + SVR + custom)
 
@@ -68,12 +69,14 @@ Automatic benchmarking & comparison toolset
 
 Results summarization with convergence metrics
 
-Extensible design for new models & acquisition functions
+Extensible design for new models & acquisition functions.
 
-🔧 Installation
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔧 **Installation**
 Requirements
 
-Python ≥ 3.8
+Python < 3.11
 
 pip
 
@@ -85,7 +88,9 @@ python -m venv .venv
 source .venv/bin/activate      # macOS/Linux
 .\.venv\Scripts\activate       # Windows
 
-🚀 Quick Start
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 **Quick Start**
 1. Verify Installation
 python -c "print('✅ CMA-ES + Surrogate Framework Ready!')"
 
@@ -98,7 +103,9 @@ python run_comparison.py --functions sphere,rastrigin,rosenbrock --dim 2 --runs 
 4. Generate Summary Metrics
 python tools/summarize_results.py --results results --out COMPARISON_RESULTS.csv
 
-💡 Usage Examples
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+💡 **Usage Examples**
 ✅ Example 1 — Basic Surrogate-Assisted CMA-ES
 from surrogate.surrogate_ensemble import SurrogateEnsemble
 from optimizer.cma_es_optimizer import CMAESOptimizer
@@ -152,7 +159,9 @@ project-root/
 ├── run_comparison.py
 └── requirements.txt
 
-🧠 Algorithm Details
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 **Algorithm Details**
 Surrogate Ensemble
 
 GP, RF, GBM, SVR, and optional custom models
@@ -179,7 +188,9 @@ CMA-ES updates using real evaluations
 
 Surrogate retrains with new samples
 
-📊 Results & Metrics
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📊 **Results & Metrics**
 
 Automatically computed:
 
@@ -202,13 +213,18 @@ results/experiment_YYYYMMDD/
 │── performance_summary.png
 └── COMPARISON_RESULTS.csv
 
-🐛 Troubleshooting
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🐛 **Troubleshooting**
 Issue	Fix
 ImportError	Reinstall via pip install -r requirements.txt
 Slow surrogate	Reduce ensemble size or dimensionality
 CMA-ES divergence	Verify bounds are finite and ordered
 Empty outputs	Ensure results folder contains valid experiment logs
-✅ Three Novel Surrogate-Assisted CMA-ES Variants
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+✅ **Three Novel Surrogate-Assisted CMA-ES Variants**
 
 These are the new contributions introduced in this work.
 All variants support optional Transformer embeddings and meta-learned priors.
@@ -236,7 +252,9 @@ Low sensitivity to surrogate miscalibration
 
 Strong performance on noisy/multimodal landscapes
 
-2. ✅ DAE–SMC-CMA — Dual Adaptive Ensemble + Surrogate Model Control
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. ✅ **DAE–SMC-CMA — Dual Adaptive Ensemble + Surrogate Model Control**
 Core Idea
 
 Adaptive trust-control of the surrogate based on:
@@ -261,7 +279,9 @@ Highly sample-efficient
 
 Adapts online to unknown landscapes
 
-3. ✅ MSES-CMA — Multi-Scale Ensemble Surrogate CMA-ES
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3. ✅ **MSES-CMA — Multi-Scale Ensemble Surrogate CMA-ES**
 Core Idea
 
 Ensemble contains models trained at multiple scales:
@@ -288,7 +308,9 @@ Strong on ill-conditioned or hybrid functions
 
 Avoids deceptive local minima
 
-✅ Optional Enhancements (All Variants)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+✅ **Optional Enhancements (All Variants)**
 Transformer-based embeddings
 
 Encode structured input patterns
@@ -311,7 +333,9 @@ Ensemble agreement checks
 
 Surrogate quality thresholds
 
-✅ Summary of Novel Variants
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+✅ **Summary of Novel Variants**
 Variant	Core Mechanism	Strengths	Best Use Cases
 ESR–CMA-ES	Rank-based surrogate selection	Noise-resistant, stable	Multimodal/noisy landscapes
 DAE–SMC-CMA	Adaptive surrogate trust-control	Most stable + efficient	Unknown/dynamic problems
@@ -320,3 +344,4 @@ MSES-CMA	Multi-scale surrogate fusion	Strong global–local balance	Ill-conditio
 
 Research and educational use.
 Cite CMA-ES & surrogate modeling literature when used academically.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
