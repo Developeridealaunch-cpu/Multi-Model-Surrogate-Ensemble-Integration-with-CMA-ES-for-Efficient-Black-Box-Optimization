@@ -236,4 +236,137 @@ Use small reproducible examples in PRs
 This project is for research and educational use.
 Please cite relevant CMA-ES and surrogate modeling literature if used in publications.
 
+Novel Contributions (Three New Variants)
 
+This work introduces three novel surrogate-assisted CMA-ES variants, each designed to improve sample efficiency, robustness, and adaptation speed in black-box optimization.
+All three methods optionally support Transformer-based embeddings and meta-learned priors for enhanced warm-starting.
+
+✅ 1. ESR–CMA-ES — Ensemble Surrogate Rank CMA-ES
+
+Goal: Increase stability of surrogate-assisted selection by ranking candidates based on ensemble consensus rather than raw surrogate predictions.
+
+Key Ideas
+
+Uses rank aggregation across multiple surrogate models (GP, RF, GBM, SVR, etc.).
+
+Ranking avoids scale differences and reduces model bias.
+
+Ensemble rank replaces raw predicted values when selecting samples for true evaluation.
+
+Improves robustness on multimodal and noisy landscapes.
+
+Benefits
+
+More stable than single-model surrogate CMA-ES
+
+Less sensitive to surrogate miscalibration
+
+Excellent for rugged or noisy objectives
+
+✅ 2. DAE–SMC-CMA — Dual Adaptive Ensemble – Surrogate Model Control CMA-ES
+
+Goal: Improve reliability by dynamically controlling the surrogate’s influence.
+
+Key Ideas
+
+Maintains two adaptive signals:
+
+Surrogate uncertainty
+
+Model agreement / disagreement
+
+Surrogate trust is adjusted online based on:
+
+error estimates
+
+ensemble variance
+
+recent performance
+
+CMA-ES switches between:
+
+Exploration mode (low surrogate trust)
+
+Exploitation mode (high surrogate trust)
+
+Benefits
+
+Prevents surrogate overconfidence
+
+More sample-efficient than static surrogate weighting
+
+Adapts to different landscapes automatically
+
+✅ 3. MSES–CMA — Multi-Scale Ensemble Surrogate CMA-ES
+
+Goal: Capture both global and local landscape structure using multi-scale models.
+
+Key Ideas
+
+Surrogate ensemble contains models trained at different scales:
+
+coarse global regressors
+
+medium-scale models
+
+fine-scale local predictors
+
+Predictions are fused via:
+
+scale-aware weighting
+
+uncertainty normalization
+
+local sensitivity patterns
+
+CMA-ES uses multi-scale predictions to guide sampling.
+
+Benefits
+
+Better global–local balance
+
+Strong performance on ill-conditioned or hybrid functions
+
+More robust to deceptive local minima
+
+✅ Optional Extensions (for all variants)
+
+All three variants optionally consume:
+
+1. Transformer-Based Embeddings
+
+Extract structural features from input vectors
+
+Improve generalization across similar problem classes
+
+Enable meta-learning via sequence/attention modeling
+
+2. Meta-Learned Priors
+
+Learned from previous tasks or benchmark families
+
+Provide better initialization for:
+
+CMA-ES mean
+
+covariance
+
+surrogate hyperparameters
+
+Accelerate adaptation on new problems
+
+3. Adaptive Switching Logic
+
+Each variant includes:
+
+uncertainty triggers
+
+ensemble-agreement checks
+
+surrogate quality thresholds
+
+✅ Summary Table
+Variant	Core Mechanism	Strengths	Best Use Cases
+ESR–CMA-ES	Rank-based surrogate selection	Robust, noise-resistant	Multimodal, noisy problems
+DAE–SMC-CMA	Dual adaptive surrogate control	Most stable + adaptive	Unknown landscapes, dynamic problems
+MSES–CMA	Multi-scale modeling	Excellent global–local balance	Ill-conditioned, hybrid functions
