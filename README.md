@@ -74,6 +74,7 @@ Extensible design for new models & acquisition functions.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 🔧 **Installation**
+
 Requirements
 
 Python < 3.11
@@ -91,6 +92,7 @@ source .venv/bin/activate      # macOS/Linux
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 🚀 **Quick Start**
+
 1. Verify Installation
 python -c "print('✅ CMA-ES + Surrogate Framework Ready!')"
 
@@ -106,6 +108,7 @@ python tools/summarize_results.py --results results --out COMPARISON_RESULTS.csv
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 💡 **Usage Examples**
+
 ✅ Example 1 — Basic Surrogate-Assisted CMA-ES
 from surrogate.surrogate_ensemble import SurrogateEnsemble
 from optimizer.cma_es_optimizer import CMAESOptimizer
@@ -162,6 +165,7 @@ project-root/
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 🧠 **Algorithm Details**
+
 Surrogate Ensemble
 
 GP, RF, GBM, SVR, and optional custom models
@@ -216,6 +220,7 @@ results/experiment_YYYYMMDD/
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 🐛 **Troubleshooting**
+
 Issue	Fix
 ImportError	Reinstall via pip install -r requirements.txt
 Slow surrogate	Reduce ensemble size or dimensionality
@@ -255,6 +260,7 @@ Strong performance on noisy/multimodal landscapes
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 2. ✅ **DAE–SMC-CMA — Dual Adaptive Ensemble + Surrogate Model Control**
+
 Core Idea
 
 Adaptive trust-control of the surrogate based on:
@@ -282,6 +288,7 @@ Adapts online to unknown landscapes
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 3. ✅ **MSES-CMA — Multi-Scale Ensemble Surrogate CMA-ES**
+
 Core Idea
 
 Ensemble contains models trained at multiple scales:
@@ -311,6 +318,7 @@ Avoids deceptive local minima
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ✅ **Optional Enhancements (All Variants)**
+
 Transformer-based embeddings
 
 Encode structured input patterns
@@ -336,11 +344,13 @@ Surrogate quality thresholds
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ✅ **Summary of Novel Variants**
+
 Variant	Core Mechanism	Strengths	Best Use Cases
 ESR–CMA-ES	Rank-based surrogate selection	Noise-resistant, stable	Multimodal/noisy landscapes
 DAE–SMC-CMA	Adaptive surrogate trust-control	Most stable + efficient	Unknown/dynamic problems
 MSES-CMA	Multi-scale surrogate fusion	Strong global–local balance	Ill-conditioned/hybrid functions
-📄 License
+
+📄 **License**
 
 Research and educational use.
 Cite CMA-ES & surrogate modeling literature when used academically.
