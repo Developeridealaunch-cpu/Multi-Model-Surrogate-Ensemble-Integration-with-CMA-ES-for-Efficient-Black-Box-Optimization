@@ -1,17 +1,9 @@
-# Multi-Model-Surrogate-Ensemble-Integration-with-CMA-ES-for-Efficient-Black-Box-Optimization
-Multi-Model Surrogate Ensemble Integration
-
-
 🚀 Multi-Model Surrogate Ensemble + CMA-ES Framework
+High-Efficiency Surrogate-Assisted Black-Box Optimization
 
-Project Type: Surrogate-assisted black-box optimization
-Methodology: Ensemble surrogate models + CMA-ES exploration
-Goal: Efficient optimization with drastically fewer expensive function evaluations
+A unified framework combining multi-model surrogate ensembles with CMA-ES, designed to drastically reduce the number of expensive objective evaluations in scientific and engineering optimization.
 
-This repository implements a multi-model surrogate ensemble framework integrated with CMA-ES (Covariance Matrix Adaptation Evolution Strategy).
-The system supports efficient black-box optimization, uncertainty-driven sampling, flexible surrogate selection, and automated benchmarking.
-
-📋 Table of Contents
+📌 Table of Contents
 
 Overview
 
@@ -33,66 +25,79 @@ Troubleshooting
 
 Contributing
 
+Novel Methods Introduced
+
+License
+
 🎯 Overview
 
-This framework integrates CMA-ES with a surrogate ensemble to reduce the number of expensive objective evaluations required for black-box optimization.
+This framework tightly integrates CMA-ES with a multi-model surrogate ensemble to perform sample-efficient optimization on expensive, noisy, or simulation-based black-box functions.
 
-Core Principles
+Core Workflow
+CMA-ES Exploration → Surrogate Ensemble Prediction →  
+Uncertainty Estimation → Acquisition Ranking →  
+True Evaluation (Top-K) → Surrogate Retraining
 
-CMA-ES explores the search space globally.
+Key Principles
 
-A surrogate ensemble approximates the objective function using multiple models (e.g., GP, Random Forest, Gradient Boosting, SVR).
+CMA-ES provides global exploration and adaptive covariance shaping.
 
-Uncertainty estimation identifies where the surrogate is unreliable.
+Surrogate ensemble approximates the expensive objective using multiple regressors (GP, RF, GBM, SVR, custom).
 
-Acquisition-based sampling selects new points to evaluate on the real objective.
+Ensemble variance yields uncertainty estimation and trust-control.
 
-The surrogate is iteratively updated, improving accuracy over time.
+Acquisition strategies guide efficient candidate selection.
 
-This hybrid approach increases efficiency and robustness compared to standalone CMA-ES or neural-network-based surrogate models.
+Surrogates are updated iteratively, improving accuracy and stability.
 
 ✅ Key Features
 
-✅ Multi-model surrogate ensemble (GP + RF + GBM + SVR + Custom models)
-✅ CMA-ES integration for robust global optimization
-✅ Uncertainty-aware sampling using ensemble variance
-✅ Support for black-box functions (scientific, engineering, simulation-based)
-✅ Batch evaluation mode for parallel systems
-✅ Lightweight dependencies (no deep-learning frameworks)
-✅ Automated comparison tools
-✅ Results summarization (COMPARISON_RESULTS.csv)
-✅ Extensible design for custom surrogates and acquisition strategies
+Multi-model surrogate ensemble (GP + RF + GBM + SVR + custom)
+
+CMA-ES integration for robust black-box optimization
+
+Uncertainty-aware acquisition (UCB, LCB, EI, variance-based)
+
+Optional batch-evaluation for parallel systems
+
+Minimal dependencies; no deep learning required
+
+Automatic benchmarking & comparison toolset
+
+Results summarization with convergence metrics
+
+Extensible design for new models & acquisition functions
 
 🔧 Installation
-Prerequisites
+Requirements
 
-Python 3.8+
+Python ≥ 3.8
 
-pip package manager
+pip
 
-Install Dependencies
+Install
 pip install -r requirements.txt
 
-Recommended Virtual Environment
+Virtual Environment (recommended)
 python -m venv .venv
-source .venv/bin/activate   # macOS/Linux
-.\.venv\Scripts\activate    # Windows
+source .venv/bin/activate      # macOS/Linux
+.\.venv\Scripts\activate       # Windows
 
 🚀 Quick Start
-1. Verify the installation
+1. Verify Installation
 python -c "print('✅ CMA-ES + Surrogate Framework Ready!')"
 
-2. Run a demo optimization
+2. Run Demo Optimization
 python run_cmaes_surrogate_demo.py --function sphere --dim 5 --max_evals 100
 
-3. Benchmark comparison (CMA-ES vs Surrogate-CMA-ES)
+3. Compare CMA-ES vs Surrogate-CMA-ES
 python run_comparison.py --functions sphere,rastrigin,rosenbrock --dim 2 --runs 5
 
-4. Generate summary metrics
+4. Generate Summary Metrics
 python tools/summarize_results.py --results results --out COMPARISON_RESULTS.csv
 
 💡 Usage Examples
-Example 1: Basic Surrogate-Assisted CMA-ES
+✅ Example 1 — Basic Surrogate-Assisted CMA-ES
 from surrogate.surrogate_ensemble import SurrogateEnsemble
 from optimizer.cma_es_optimizer import CMAESOptimizer
 import numpy as np
@@ -108,7 +113,7 @@ optimizer = CMAESOptimizer(dim=3, bounds=bounds, surrogate=model, max_evals=150)
 result = optimizer.optimize(sphere, verbose=True)
 print(result["best_x"], result["best_y"])
 
-Example 2: Pure CMA-ES vs Surrogate-CMA-ES
+✅ Example 2 — Pure CMA-ES vs Surrogate-CMA-ES
 from optimizer.baselines import pure_cmaes, surrogate_cmaes
 import numpy as np
 
@@ -120,253 +125,196 @@ best2 = surrogate_cmaes(rastrigin, dim=5)
 
 print(best1, best2)
 
-Example 3: Optimization on Benchmark Functions
-python run_benchmarks.py --functions sphere,rosenbrock --dim 2,5,10 --runs 10
-
 📁 Project Structure
 project-root/
-├── surrogate/                          # Surrogate models
-│   ├── surrogate_ensemble.py           # Multi-model ensemble logic
-│   └── gp_model.py                     # Gaussian Process wrapper
 │
-├── optimizer/                          # Optimization components
-│   ├── cma_es_optimizer.py             # Surrogate-assisted CMA-ES core
-│   ├── acquisition.py                  # UCB/LCB/EI-based strategies
-│   └── baselines.py                    # Pure CMA-ES + baseline methods
+├── surrogate/
+│   ├── surrogate_ensemble.py
+│   └── gp_model.py
 │
-├── benchmarks/                         # Benchmark functions
+├── optimizer/
+│   ├── cma_es_optimizer.py
+│   ├── acquisition.py
+│   └── baselines.py
+│
+├── benchmarks/
 │   ├── sphere.py
 │   ├── rastrigin.py
 │   └── rosenbrock.py
 │
 ├── tools/
-│   └── summarize_results.py            # Comparison summarizer
+│   └── summarize_results.py
 │
-├── results/                            # Saved results
+├── results/
 ├── run_cmaes_surrogate_demo.py
 ├── run_comparison.py
-├── requirements.txt
-└── README.md
+└── requirements.txt
 
 🧠 Algorithm Details
-Surrogate Ensemble Architecture
+Surrogate Ensemble
 
-Models: configurable mixture (GP, RF, GBM, SVR)
+GP, RF, GBM, SVR, and optional custom models
 
-Uncertainty: computed as variance across ensemble predictions
+Prediction fusion via weighted mean
 
-Training: retrained periodically with new evaluated samples
+Uncertainty = ensemble variance
 
-Acquisition score:
+Retraining at each iteration
 
-acquisition = mean_prediction - k * uncertainty     # exploit–explore balance
+Acquisition Score:
+
+acquisition = mean_prediction – k * uncertainty
 
 CMA-ES Integration
 
-CMA-ES generates candidate points
+CMA-ES proposes candidate points
 
-Surrogate predicts:
+Surrogate ranks candidates using acquisition
 
-Expected function values
+Top-K candidates are evaluated on the true objective
 
-Uncertainty
+CMA-ES updates using real evaluations
 
-Acquisition ranks candidates
-
-Top-K candidates are evaluated on the true function
-
-CMA-ES updates using true evaluations
-
-Surrogate retrains
-
-Default Hyperparameters
-
-Population size: dynamic, depends on dimension
-
-Batch size: 4–16 (user-set)
-
-Ensemble size: 5 models
-
-Uncertainty weight: k = 1–3
-
-Retrain frequency: 1 iteration
+Surrogate retrains with new samples
 
 📊 Results & Metrics
-Metrics Automatically Computed
 
-Best value achieved
+Automatically computed:
 
-Evaluations to reach threshold
+Best value
 
-Mean/Min/Max performance across runs
+Evaluations to threshold
 
-Variance-based robustness
+Mean / Min / Max performance
 
-Comparison across optimizers
+Variance & robustness
 
-Auto-Generated Files
+Multi-run comparison
+
+Generated files (per experiment):
+
 results/experiment_YYYYMMDD/
-├── runs.csv
-├── metrics.json
-├── convergence.png
-├── performance_summary.png
-└── COMPARISON_RESULTS.csv   (via summarize_results.py)
+│── runs.csv
+│── metrics.json
+│── convergence.png
+│── performance_summary.png
+└── COMPARISON_RESULTS.csv
 
 🐛 Troubleshooting
-Common Issues & Fixes
 Issue	Fix
-ImportError	Install dependencies via pip install -r requirements.txt
+ImportError	Reinstall via pip install -r requirements.txt
 Slow surrogate	Reduce ensemble size or dimensionality
-Divergent CMA-ES	Check bounds (must be finite and ordered)
-Empty comparison outputs	Ensure results folder contains CSV/TSV/JSON
-🤝 Contributing
+CMA-ES divergence	Verify bounds are finite and ordered
+Empty outputs	Ensure results folder contains valid experiment logs
+✅ Three Novel Surrogate-Assisted CMA-ES Variants
 
-Follow existing coding style
+These are the new contributions introduced in this work.
+All variants support optional Transformer embeddings and meta-learned priors.
 
-Keep surrogate interface consistent
+1. ✅ ESR–CMA-ES — Ensemble Surrogate Rank CMA-ES
+Core Idea
 
-Add tests for new models or acquisitions
+Selection is based on rank aggregation from multiple surrogate models instead of raw predictions.
 
-Document new hyperparameters
+Mechanism
 
-Use small reproducible examples in PRs
+Each surrogate ranks candidates
 
-📄 License
+Ranks are aggregated (Borda/median rank)
 
-This project is for research and educational use.
-Please cite relevant CMA-ES and surrogate modeling literature if used in publications.
+CMA-ES evaluates top-ranked points
 
-Novel Contributions (Three New Variants)
+Scale-invariant and noise resistant
 
-This work introduces three novel surrogate-assisted CMA-ES variants, each designed to improve sample efficiency, robustness, and adaptation speed in black-box optimization.
-All three methods optionally support Transformer-based embeddings and meta-learned priors for enhanced warm-starting.
+Strengths
 
-✅ 1. ESR–CMA-ES — Ensemble Surrogate Rank CMA-ES
+High robustness
 
-Goal: Increase stability of surrogate-assisted selection by ranking candidates based on ensemble consensus rather than raw surrogate predictions.
+Low sensitivity to surrogate miscalibration
 
-Key Ideas
+Strong performance on noisy/multimodal landscapes
 
-Uses rank aggregation across multiple surrogate models (GP, RF, GBM, SVR, etc.).
+2. ✅ DAE–SMC-CMA — Dual Adaptive Ensemble + Surrogate Model Control
+Core Idea
 
-Ranking avoids scale differences and reduces model bias.
-
-Ensemble rank replaces raw predicted values when selecting samples for true evaluation.
-
-Improves robustness on multimodal and noisy landscapes.
-
-Benefits
-
-More stable than single-model surrogate CMA-ES
-
-Less sensitive to surrogate miscalibration
-
-Excellent for rugged or noisy objectives
-
-✅ 2. DAE–SMC-CMA — Dual Adaptive Ensemble – Surrogate Model Control CMA-ES
-
-Goal: Improve reliability by dynamically controlling the surrogate’s influence.
-
-Key Ideas
-
-Maintains two adaptive signals:
+Adaptive trust-control of the surrogate based on:
 
 Surrogate uncertainty
 
-Model agreement / disagreement
+Ensemble agreement
 
-Surrogate trust is adjusted online based on:
+Mechanism
 
-error estimates
+Two adaptive signals control surrogate influence
 
-ensemble variance
+CMA-ES switches between exploitation/exploration
 
-recent performance
+Prevents overconfidence and collapse
 
-CMA-ES switches between:
+Strengths
 
-Exploration mode (low surrogate trust)
+Most stable
 
-Exploitation mode (high surrogate trust)
+Highly sample-efficient
 
-Benefits
+Adapts online to unknown landscapes
 
-Prevents surrogate overconfidence
+3. ✅ MSES-CMA — Multi-Scale Ensemble Surrogate CMA-ES
+Core Idea
 
-More sample-efficient than static surrogate weighting
+Ensemble contains models trained at multiple scales:
 
-Adapts to different landscapes automatically
+global (coarse)
 
-✅ 3. MSES–CMA — Multi-Scale Ensemble Surrogate CMA-ES
+medium-scale
 
-Goal: Capture both global and local landscape structure using multi-scale models.
+local (fine)
 
-Key Ideas
+Mechanism
 
-Surrogate ensemble contains models trained at different scales:
+Scale-aware prediction fusion
 
-coarse global regressors
+Local sensitivity used for refined sampling
 
-medium-scale models
+Multi-resolution surrogate landscape
 
-fine-scale local predictors
+Strengths
 
-Predictions are fused via:
+Excellent global–local balance
 
-scale-aware weighting
+Strong on ill-conditioned or hybrid functions
 
-uncertainty normalization
+Avoids deceptive local minima
 
-local sensitivity patterns
+✅ Optional Enhancements (All Variants)
+Transformer-based embeddings
 
-CMA-ES uses multi-scale predictions to guide sampling.
+Encode structured input patterns
 
-Benefits
+Improve cross-task generalization
 
-Better global–local balance
+Meta-learned priors
 
-Strong performance on ill-conditioned or hybrid functions
+Learned covariance
 
-More robust to deceptive local minima
+Learned CMA-ES mean
 
-✅ Optional Extensions (for all variants)
+Learned surrogate hyperparameters
 
-All three variants optionally consume:
+Adaptive switching
 
-1. Transformer-Based Embeddings
+Uncertainty triggers
 
-Extract structural features from input vectors
+Ensemble agreement checks
 
-Improve generalization across similar problem classes
+Surrogate quality thresholds
 
-Enable meta-learning via sequence/attention modeling
-
-2. Meta-Learned Priors
-
-Learned from previous tasks or benchmark families
-
-Provide better initialization for:
-
-CMA-ES mean
-
-covariance
-
-surrogate hyperparameters
-
-Accelerate adaptation on new problems
-
-3. Adaptive Switching Logic
-
-Each variant includes:
-
-uncertainty triggers
-
-ensemble-agreement checks
-
-surrogate quality thresholds
-
-✅ Summary Table
+✅ Summary of Novel Variants
 Variant	Core Mechanism	Strengths	Best Use Cases
-ESR–CMA-ES	Rank-based surrogate selection	Robust, noise-resistant	Multimodal, noisy problems
-DAE–SMC-CMA	Dual adaptive surrogate control	Most stable + adaptive	Unknown landscapes, dynamic problems
-MSES–CMA	Multi-scale modeling	Excellent global–local balance	Ill-conditioned, hybrid functions
+ESR–CMA-ES	Rank-based surrogate selection	Noise-resistant, stable	Multimodal/noisy landscapes
+DAE–SMC-CMA	Adaptive surrogate trust-control	Most stable + efficient	Unknown/dynamic problems
+MSES-CMA	Multi-scale surrogate fusion	Strong global–local balance	Ill-conditioned/hybrid functions
+📄 License
+
+Research and educational use.
+Cite CMA-ES & surrogate modeling literature when used academically.
