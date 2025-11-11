@@ -1,9 +1,9 @@
-🚀 Multi-Model Surrogate Ensemble + CMA-ES Framework
+🚀** Multi-Model Surrogate Ensemble + CMA-ES Framework**
 High-Efficiency Surrogate-Assisted Black-Box Optimization
 
 A unified framework combining multi-model surrogate ensembles with CMA-ES, designed to drastically reduce the number of expensive objective evaluations in scientific and engineering optimization.
 
-📌 Table of Contents
+📌 **Table of Contents**
 
 Overview
 
@@ -29,7 +29,9 @@ Novel Methods Introduced
 
 License
 
-🎯 Overview
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 **Overview**
 
 This framework tightly integrates CMA-ES with a multi-model surrogate ensemble to perform sample-efficient optimization on expensive, noisy, or simulation-based black-box functions.
 
