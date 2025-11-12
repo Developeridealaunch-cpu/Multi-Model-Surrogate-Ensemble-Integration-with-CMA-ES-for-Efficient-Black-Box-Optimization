@@ -375,12 +375,6 @@ Document new surrogates or acquisition functions
 
 Add reproducible test cases
 
-# 🧾 **License**
-
-This repository is for research and educational use only.
-
-Please cite CMA-ES and surrogate modeling literature in derived publications.
-
 ## 📚 Citations
 
 If you use this repository in your research, please cite the following foundational works:
@@ -408,4 +402,9 @@ If you use this repository in your research, please cite the following foundatio
 | **Bajer et al. (2019)** | Gaussian Process + CMA-ES (DTS-CMA-ES) — theoretical basis for uncertainty and RDE metric.                       |
 | **Our Work (2025)**    | Extends these ideas with hybrid surrogate ensembles, meta-learning priors, and transformer landscape embeddings. |
 
+# 🧾 **License**
+
+This repository is for research and educational use only.
+
+Please cite CMA-ES and surrogate modeling literature in derived publications.
 
