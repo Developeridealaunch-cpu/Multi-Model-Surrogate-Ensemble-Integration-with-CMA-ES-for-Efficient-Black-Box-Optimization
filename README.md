@@ -265,11 +265,15 @@ All results are auto-saved under /results/:
 
 🧮 **Optimization Metrics**
 
-Method	Best f(x) ↓	Mean f(x) ↓	Success Rate ↑	ERT ↓
-CMA-ES	0.500	0.500	0.00	∞
-ESR–CMA-ES	0.120	0.120	1.00	50
-DAE–SMC–CMA	0.080	0.080	1.00	40
-MSES–CMA	0.100	0.100	1.00	45
+Method	    Best f(x) ↓	  Mean f(x) ↓	   Success Rate ↑	   ERT ↓
+
+CMA-ES   	  0.500	        0.500	            0.00          	∞
+
+ESR–CMA-ES	 0.120	        0.120	            1.00	         50
+
+DAE–SMC–CMA	0.080	        0.080	            1.00	         40
+
+MSES–CMA	0.100	           0.100	            1.00	         45
 
 📈 **DAE–SMC–CMA achieves the best trade-off between efficiency and accuracy.**
 
