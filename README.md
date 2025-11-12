@@ -27,7 +27,7 @@ True Evaluation (Top-K) → Surrogate Retraining
 
 🧑‍💻 Extensible	Plug-and-play for new surrogates, encoders, or priors
 
-🧱 **Installation**
+# 🧱 **Installation**
 
 **Requirements**
 
@@ -44,21 +44,21 @@ python -m venv .venv
 source .venv/bin/activate      # macOS / Linux
 .\.venv\Scripts\activate       # Windows
 
-⚡ **Quick Start**
+# ⚡ **Quick Start**
 
-# ✅ Verify installation
+ ✅ **Verify installation**
 python -c "print('CMA-ES + Surrogate Framework Ready!')"
 
-# 🚀 Run demo optimization
+🚀 **Run demo optimization**
 python run_cmaes_surrogate_demo.py --function sphere --dim 5 --max_evals 100
 
-# 🔬 Compare CMA-ES vs Surrogate-CMA-ES
+🔬 **Compare CMA-ES vs Surrogate-CMA-ES**
 python run_comparison.py --functions sphere,rastrigin,rosenbrock --dim 3 --runs 5 --max_evals 120 --include_variants
 
-# 📊 Generate summary metrics
+📊 **Generate summary metrics**
 python tools/summarize_results.py --results results --out COMPARISON_RESULTS.csv
 
-💡 **Example Usage**
+# 💡 **Example Usage**
 
 🧠 **Example 1 — Surrogate-Assisted CMA-ES**
 
@@ -85,7 +85,7 @@ def rastrigin(x):
 print(pure_cmaes(rastrigin, dim=5))
 print(surrogate_cmaes(rastrigin, dim=5))
 
-🧩 **Project Structure**
+# 🧩 **Project Structure**
 
 project-root/
 │
@@ -125,7 +125,7 @@ project-root/
 ├── run_comparison.py
 └── requirements.txt
 
-🧮 **Algorithm Details**
+# 🧮 **Algorithm Details**
 
 🔹 **Surrogate Ensemble**
 
@@ -175,7 +175,7 @@ Best_f(x)	Best solution quality
 Success_rate	% of runs reaching target
 COCO Visualization	log(FE) vs f(x) curves
 
-🧪 **Novel Variants (New Contributions)**
+# 🧪 **Novel Variants (New Contributions)**
 
 <details> <summary>🌟 **ESR–CMA-ES — Ensemble Surrogate Rank CMA-ES**</summary>
 
@@ -194,7 +194,7 @@ Benefits: Excellent balance between exploration & exploitation.
 
 </details>
 
-🧠 **Optional Enhancements**
+# 🧠 **Optional Enhancements**
 
 Transformer-Based Embeddings — Landscape encoding for structured generalization
 
@@ -202,7 +202,7 @@ Meta-Learned Priors — Warm-start surrogate hyperparameters
 
 Adaptive Switching — Surrogate trust based on uncertainty & ensemble agreement
 
-📊 **Evaluation Outputs**
+# 📊 **Evaluation Outputs**
 
 All results are auto-saved under /results/:
 
@@ -214,12 +214,12 @@ surrogate_metrics.csv	Surrogate accuracy metrics
 optimization_metrics.csv	ERT, success rate, etc.
 *.png	Plots: performance, convergence, metrics
 
-🧩 **Dataset**
+# 🧩 **Dataset**
 
 BBOB-style dataset for surrogate training and testing:
 data/bbob_samples.csv — 500 samples each for Sphere, Rastrigin, Rosenbrock (3D).
 
-🧰 **Troubleshooting**
+# 🧰 **Troubleshooting**
 
 Issue	Fix
 
@@ -228,7 +228,7 @@ Slow surrogates	Reduce ensemble size or dimension
 Divergent CMA-ES	Ensure finite, ordered bounds
 Empty outputs	Check that /results/ contains CSVs
 
-🤝 **Contributing**
+# 🤝 **Contributing**
 
 💡 Pull Requests Welcome!
 
@@ -238,12 +238,12 @@ Document new surrogates or acquisition functions
 
 Add reproducible test cases
 
-🧾 **License**
+# 🧾 **License**
 
 This repository is for research and educational use only.
 Please cite CMA-ES and surrogate modeling literature in derived publications.
 
-🧬 **Citation**
+# 🧬 **Citation**
 
 Hansen, N. (2006). The CMA Evolution Strategy: A Comparing Review.
 Surrogates in Black-Box Optimization — Springer, 2021.
