@@ -1,0 +1,4 @@
+variant,best_y,novelty_score,disagreement,rank_stability,diversity
+ESR,0.12,3.0,0.02,0.7,0.5
+DAE-SMC,0.08,5.0,0.03,0.8,0.6
+MSES,0.1,4.0,0.025,0.75,0.55
