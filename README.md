@@ -7,6 +7,7 @@ A unified research framework combining multi-model surrogate ensembles with CMA-
 **Core Loop:**
 
 CMA-ES Exploration → Surrogate Prediction → Uncertainty Estimation → Acquisition Ranking →
+
 True Evaluation (Top-K) → Surrogate Retraining
 
 ✨ **Key Highlights**
@@ -40,8 +41,11 @@ Setup
 pip install -r requirements.txt
 
 (Recommended) Virtual Environment
+
 python -m venv .venv
+
 source .venv/bin/activate      # macOS / Linux
+
 .\.venv\Scripts\activate       # Windows
 
 # ⚡ **Quick Start**
@@ -257,17 +261,19 @@ Adaptive Switching — Surrogate trust based on uncertainty & ensemble agreement
 
 All results are auto-saved under /results/:
 
-📊 Results Summary
-🧮 Optimization Metrics
+📊 **Results Summary**
+
+🧮 **Optimization Metrics**
+
 Method	Best f(x) ↓	Mean f(x) ↓	Success Rate ↑	ERT ↓
 CMA-ES	0.500	0.500	0.00	∞
 ESR–CMA-ES	0.120	0.120	1.00	50
 DAE–SMC–CMA	0.080	0.080	1.00	40
 MSES–CMA	0.100	0.100	1.00	45
 
-📈 DAE–SMC–CMA achieves the best trade-off between efficiency and accuracy.
+📈 **DAE–SMC–CMA achieves the best trade-off between efficiency and accuracy.**
 
-🧠 Surrogate Metrics
+🧠 **Surrogate Metrics**
 
 Method	Kendall-τ ↑	RDE ↓	RMSE ↓	Corr ↑
 
@@ -279,38 +285,42 @@ DAE–SMC–CMA	0.85	0.15	0.10	0.80
 
 MSES–CMA	0.81	0.20	0.13	0.78
 
-📈 Convergence Visualization
+📈 **Convergence Visualization**
 
 CMA-ES vs ESR/DAE–SMC/MSES
 
 The surrogate-assisted CMA-ES variants converge significantly faster with fewer evaluations.
 
-📉 Performance Summary
+📉 **Performance Summary**
 
 Mean performance (lower = better) across benchmark functions.
 
-🧭 Novelty vs Performance
+🧭 **Novelty vs Performance**
 
 DAE–SMC–CMA achieves high novelty with strong optimization performance.
 
-🧩 Surrogate Metrics Visualization
+🧩 **Surrogate Metrics Visualization**
 
 Higher Kendall-τ and lower RMSE indicate better surrogate fidelity.
 
-⚙️ Optimization Metrics Visualization
+⚙️ **Optimization Metrics Visualization**
 
 Comparison of best f(x) and success rate across algorithms.
 
-🧮 Dataset
+🧮 **Dataset**
 
 📂 data/bbob_samples.csv
 
 Synthetic BBOB-style dataset with 500 samples per function (Sphere, Rastrigin, Rosenbrock, dim=3).
 
 function	dim	x1	x2	x3	f(x)
+
 sphere	3	-2.5	1.1	0.7	7.6
+
 rastrigin	3	4.8	-3.2	2.9	92.3
+
 rosenbrock	3	0.5	0.6	-1.1	5.1
+
 ...	...	...	...	...	...
 
 🧩 Evaluation Metrics Summary
