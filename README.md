@@ -273,7 +273,7 @@ All results are auto-saved under /results/:
 |-----------|-------------|---------|---------|---------|
 | `CMA-ES` | 0.500 | 0.500 | 0.00 |  ∞  |
 | `ESR–CMA-ES` | 0.120 | 0.120 | 1.00 |  50  |
-| `DAE–SMC–CMA` | 0.080 | 0.080 | 1.00 |  40  |
+| **`DAE–SMC–CMA`** | **0.080** | **0.080** | **1.00** |  **40**  |
 | `MSES–CMA` | 0.100 | 0.100 | 1.00 |  45  |
 
 📈 **DAE–SMC–CMA achieves the best trade-off between efficiency and accuracy.**
@@ -284,7 +284,7 @@ All results are auto-saved under /results/:
 |-----------|-------------|---------|---------|---------|
 | `CMA-ES` | 0.60 | 0.40 | 0.30 |  0.40  |
 | `ESR–CMA-ES` | 0.82 | 0.18 | 0.12 |  0.75  |
-| `DAE–SMC–CMA` | 0.85 | 0.15 | 0.10 |  0.80 |
+| **`DAE–SMC–CMA`** | **0.85** | **0.15** | **0.10** |  **0.80** |
 | `MSES–CMA` | 0.81 | 0.20 | 0.13 |  0.78  |
 
 📈 **Convergence Visualization**
@@ -314,6 +314,34 @@ Higher Kendall-τ and lower RMSE indicate better surrogate fidelity.
 ⚙️ **Optimization Metrics Visualization**
 
 Comparison of best f(x) and success rate across algorithms.
+
+## 🧠 Baseline Comparisons
+
+The following baselines are included for reference:
+
+- 🧮 **GP surrogate + CMA-ES**
+- 🤖 **VAE surrogate + CMA-ES**
+- 🔗 **DKL surrogate Bayesian Optimization**
+- ⚙️ **Classical CMA-ES (no surrogate)**
+
+### 📊 Performance Comparison
+<img width="1120" height="640" alt="baseline_performance" src="https://github.com/user-attachments/assets/fa0d3395-32b3-4e01-aa53-f227610439e7" />
+
+### 📈 Convergence of Baselines
+<img width="1120" height="640" alt="baseline_convergence" src="https://github.com/user-attachments/assets/d0e75cae-20e8-4d0d-a3a6-92f6e9b94d02" />
+
+### 🌐 Novelty vs Baseline Models
+<img width="960" height="640" alt="baseline_vs_novelty" src="https://github.com/user-attachments/assets/e0f08c34-edea-48f9-9a84-e188235909c7" />
+
+| Method | Best f(x) ↓ | Success ↑ | ERT ↓ |
+|:--|--:|--:|--:|
+| Classical CMA-ES | 0.500 | 0.00 | ∞ |
+| GP–CMA-ES | 0.180 | 0.80 | 60 |
+| VAE–CMA-ES | 0.130 | 0.90 | 50 |
+| DKL–BO | 0.110 | 0.95 | 45 |
+| ESR–CMA-ES | 0.120 | 1.00 | 50 |
+| **DAE–SMC–CMA** | **0.080** | **1.00** | **40** |
+| MSES–CMA | 0.100 | 1.00 | 45 |
 
 🧮 **Dataset**
 
