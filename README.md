@@ -14,11 +14,17 @@ True Evaluation (Top-K) → Surrogate Retraining
 **Feature	Description**
 
 🧩 Multi-Model Surrogates	GP, SVR, RBF, Polynomial, MC-Dropout (BNN-like)
+
 ⚙️ CMA-ES Integration	Adaptive, global, derivative-free optimizer
+
 🔍 Uncertainty-Aware Sampling	UCB, LCB, and EI acquisition
+
 🧠 Novel Algorithms	ESR–CMA-ES • DAE–SMC–CMA • MSES–CMA
+
 🧰 Automated Benchmarking	Comparison, visualization, and summary tools
+
 ⚡ Efficiency	5–10× fewer expensive evaluations vs classical CMA-ES
+
 🧑‍💻 Extensible	Plug-and-play for new surrogates, encoders, or priors
 
 🧱 **Installation**
