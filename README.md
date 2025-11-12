@@ -20,7 +20,13 @@ True Evaluation (Top-K) → Surrogate Retraining
 
 🔍 Uncertainty-Aware Sampling	UCB, LCB, and EI acquisition
 
-🧠 Novel Algorithms	ESR–CMA-ES • DAE–SMC–CMA • MSES–CMA
+🧠 Novel Algorithms
+
+   • **Ensemble Surrogate Rank CMA-ES - (ESR–CMA-ES)**
+
+   • **Dual Adaptive Ensemble – Surrogate Model Control CMA-ES - (DAE–SMC–CMA)**
+
+   • **Multi-Scale Ensemble Surrogate CMA-ES - (MSES–CMA)**
 
 🧰 Automated Benchmarking	Comparison, visualization, and summary tools
 
@@ -229,25 +235,23 @@ COCO Visualization	log(FE) vs f(x) curves
 
 # 🧪 **Novel Variants (New Contributions)**
 
-<details> <summary>🌟 **ESR–CMA-ES — Ensemble Surrogate Rank CMA-ES**</summary>
+🌟 **ESR–CMA-ES — Ensemble Surrogate Rank CMA-ES**
 
 Idea: Aggregates ranks across surrogates for robust candidate selection.
 
 Benefits: Noise-resistant, scale-independent, stable across landscapes.
 
-</details> <details> <summary>🤖 **DAE–SMC-CMA — Dual Adaptive Ensemble + Surrogate Model Control**</summary>
+🤖 **DAE–SMC-CMA — Dual Adaptive Ensemble + Surrogate Model Control**
 
 Idea: Two adaptive layers — surrogate reliability & CMA-ES evolution control.
 
 Benefits: Prevents overconfidence, dynamically adjusts surrogate trust.
 
-</details> <details> <summary>🌐 **MSES-CMA — Multi-Scale Ensemble Surrogate CMA-ES**</summary>
+🌐 **MSES-CMA — Multi-Scale Ensemble Surrogate CMA-ES**
 
 Idea: Multi-scale surrogates for global–local structure capture.
 
 Benefits: Excellent balance between exploration & exploitation.
-
-</details>
 
 # 🧠 **Optional Enhancements**
 
