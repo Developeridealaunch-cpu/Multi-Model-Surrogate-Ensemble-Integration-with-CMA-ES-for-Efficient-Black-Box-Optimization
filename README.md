@@ -46,13 +46,99 @@ Setup
 
 pip install -r requirements.txt
 
-(Recommended) Virtual Environment
+# ⚙️ Virtual Environment Setup (💡 Recommended)
+
+🧠 Tip: Using a virtual environment keeps dependencies isolated — preventing version conflicts between different Python projects.
+
+**For Windows (PowerShell / Command Prompt)**
+
+# 🧩 Create virtual environment
 
 python -m venv .venv
 
-source .venv/bin/activate      # macOS / Linux
+🚀 **Activate virtual environment**
 
-.\.venv\Scripts\activate       # Windows
+▶ **For PowerShell:**
+
+.\.venv\Scripts\Activate.ps1
+
+**▶ OR for Command Prompt:**
+
+.venv\Scripts\activate.bat
+
+✅ **Verify activation (you should see (.venv) in your prompt)**
+
+python --version
+
+pip --version
+
+🍏 **For macOS / 🐧 Linux (Terminal)**
+
+🧩 Create virtual environment
+
+python3 -m venv .venv
+
+# 🚀 Activate virtual environment
+
+source .venv/bin/activate
+
+✅ **Verify activation (you should see (.venv) in your prompt)**
+
+python --version
+
+pip --version
+
+# 🧹 Deactivating the Virtual Environment
+
+When you’re done working on the project:
+
+📴 **Deactivate virtual environment (works everywhere)**
+
+deactivate
+
+🩺 Troubleshooting Virtual Environment Issues
+
+⚠️ PowerShell Execution Policy Error (Windows)
+
+If you see an error like "running scripts is disabled":
+
+🛠️ **Allow script execution for current user**
+
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+🔁 **Try activating again**
+
+.\.venv\Scripts\Activate.ps1
+
+💡 Alternative Activation (Windows CMD)
+
+🖥️ **Use Command Prompt instead of PowerShell**
+
+.venv\Scripts\activate.bat
+
+🐍 **Python Command Confusion**
+
+Some systems use python3 instead of python
+
+Check version with:
+
+python --version
+
+**or**
+
+python3 --version
+
+📦 **Install Dependencies**
+
+After activating your virtual environment, install all required packages:
+
+pip install -r requirements.txt
+
+🧠 **Pro Tip**
+
+If you’re using VS Code, it auto-detects .venv environments.
+
+Simply select it under Python Interpreter → .venv.
 
 # ⚡ **Quick Start**
 
