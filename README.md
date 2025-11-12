@@ -117,6 +117,7 @@ project-root/
 │   └── gp_model.py                  # Gaussian Process wrapper
 
 │
+
 ├── optimizer/
 
 │   ├── cma_es_optimizer.py          # CMA-ES core + surrogate integration
@@ -126,6 +127,7 @@ project-root/
 │   └── baselines.py                 # Pure CMA-ES + baseline methods
 
 │
+
 ├── benchmarks/
 
 │   ├── sphere.py
@@ -135,6 +137,7 @@ project-root/
 │   └── rosenbrock.py
 
 │
+
 ├── tools/
 
 │   ├── summarize_results.py
@@ -148,11 +151,13 @@ project-root/
 │   └── evaluate_metrics.py
 
 │
+
 ├── data/
 
 │   └── bbob_samples.csv             # Benchmark dataset
 
 │
+
 ├── results/                         # Outputs (CSV + PNG)
 
 │   └── comparison.csv
@@ -168,12 +173,12 @@ project-root/
 │   └── *.png                        # All plots
 
 │
+
 ├── run_cmaes_surrogate_demo.py
 
 ├── run_comparison.py
 
 └── requirements.txt
-
 
 # 🧮 **Algorithm Details**
 
