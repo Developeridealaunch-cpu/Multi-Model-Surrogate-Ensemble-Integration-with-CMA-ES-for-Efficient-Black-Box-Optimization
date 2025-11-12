@@ -1,4 +1,4 @@
-🌌 **Multi-Model Surrogate Ensemble + CMA-ES High-Efficiency Surrogate-Assisted Black-Box Optimization**
+# 🌌 **Multi-Model Surrogate Ensemble + CMA-ES High-Efficiency Surrogate-Assisted Black-Box Optimization**
 
 🚀 **Overview**
 
