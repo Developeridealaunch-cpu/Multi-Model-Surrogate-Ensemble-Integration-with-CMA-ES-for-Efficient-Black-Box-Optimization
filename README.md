@@ -12,7 +12,7 @@ True Evaluation (Top-K) → Surrogate Retraining
 
 ✨ **Key Highlights**
 
-**Feature	Description**
+**Feature Description**
 
 🧩 Multi-Model Surrogates	GP, SVR, RBF, Polynomial, MC-Dropout (BNN-like)
 
@@ -78,7 +78,7 @@ python tools/summarize_results.py --results results --out COMPARISON_RESULTS.csv
 
 from surrogate.surrogate_ensemble import SurrogateEnsemble
 
-from optimizer.cma_es_optimizer import CMAESOptimizer
+from optimizer.cma_es_optimizer import CMAE SOptimizer
 
 import numpy as np
 
@@ -150,20 +150,20 @@ project-root/
 │
 ├── data/
 
-│   └── bbob_samples.csv             # Synthetic benchmark dataset
+│   └── bbob_samples.csv             # Benchmark dataset
 
 │
 ├── results/                         # Outputs (CSV + PNG)
 
-│   ├── comparison.csv
+│   └── comparison.csv
 
-│   ├── convergence_history.csv
+│   └── convergence_history.csv
 
-│   ├── surrogate_metrics.csv
+│   └── surrogate_metrics.csv
 
-│   ├── optimization_metrics.csv
+│   └── optimization_metrics.csv
 
-│   ├── novelty_performance.csv
+│   └── novelty_performance.csv
 
 │   └── *.png                        # All plots
 
