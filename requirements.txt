@@ -1,0 +1,8 @@
+numpy>=1.23
+scipy>=1.10
+scikit-learn>=1.2
+matplotlib>=3.7
+pandas>=2.0
+torch>=2.2
+# Optional COCO (BBOB) support:
+# cocoex/cocopp can be installed from COCO project: https://github.com/numbbo/coco
