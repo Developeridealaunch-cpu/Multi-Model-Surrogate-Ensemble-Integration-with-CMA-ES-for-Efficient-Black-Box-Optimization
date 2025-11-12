@@ -181,6 +181,20 @@ print(surrogate_cmaes(rastrigin, dim=5))
 
 **└── requirements.txt**
 
+### 📦 Repository Includes
+
+- 🧠 `surrogate/` → surrogate ensemble implementations
+  
+- ⚙️ `optimizer/` → CMA-ES core + acquisition + baseline variants
+   
+- 🧮 `benchmarks/` → test functions (Sphere, Rastrigin, Rosenbrock, etc.)
+   
+- 📊 `tools/` → evaluation, plotting, and comparison utilities
+  
+- 🧾 `results/` → metrics CSVs + performance plots + novelty graphs
+  
+- 🧪 Demo scripts: `run_cmaes_surrogate_demo.py`, `run_comparison.py`
+
 # 🧮 **Algorithm Details**
 
 🔹 **Surrogate Ensemble**
@@ -434,7 +448,7 @@ If you use this repository in your research, please cite the following foundatio
 
 3. **Our Current Work (2025).**  
    *Multi-Model Surrogate Ensemble + CMA-ES: ESR, DAE–SMC, and MSES Variants.*  
-   Combines ensemble surrogates (RBF, GP, SVR, Polynomial, BNN/DKL) with transformer-based landscape encoders and meta-learned priors for efficient optimization across multimodal, noisy, and hybrid landscapes.
+   🚀 Combines ensemble surrogates (RBF, GP, SVR, Polynomial, BNN/DKL) with transformer-based landscape encoders and meta-learned priors for efficient optimization across multimodal, noisy, and hybrid landscapes.
 
 | Paper                   | Contribution to Your Framework                                                                                   |
 | :---------------------- | :--------------------------------------------------------------------------------------------------------------- |
