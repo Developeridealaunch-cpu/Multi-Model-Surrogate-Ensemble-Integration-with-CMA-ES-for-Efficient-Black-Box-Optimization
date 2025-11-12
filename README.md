@@ -107,10 +107,11 @@ print(surrogate_cmaes(rastrigin, dim=5))
 
 # 🧩 **Project Structure**
 
-project-root/
+**project-root/**
+
 │
 
-├── surrogate/
+**├── surrogate/**
 
 │   ├── surrogate_ensemble.py        # Multi-model ensemble
 
@@ -118,7 +119,7 @@ project-root/
 
 │
 
-├── optimizer/
+**├── optimizer/**
 
 │   ├── cma_es_optimizer.py          # CMA-ES core + surrogate integration
 
@@ -128,7 +129,7 @@ project-root/
 
 │
 
-├── benchmarks/
+**├── benchmarks/**
 
 │   ├── sphere.py
 
@@ -138,7 +139,7 @@ project-root/
 
 │
 
-├── tools/
+**├── tools/**
 
 │   ├── summarize_results.py
 
@@ -152,13 +153,13 @@ project-root/
 
 │
 
-├── data/
+**├── data/**
 
 │   └── bbob_samples.csv             # Benchmark dataset
 
 │
 
-├── results/                         # Outputs (CSV + PNG)
+**├── results/                         # Outputs (CSV + PNG)**
 
 │   └── comparison.csv
 
