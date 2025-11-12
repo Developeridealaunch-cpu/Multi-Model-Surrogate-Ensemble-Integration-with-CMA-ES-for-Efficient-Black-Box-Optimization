@@ -293,13 +293,19 @@ MSES–CMA	0.81	0.20	0.13	0.78
 
 CMA-ES vs ESR/DAE–SMC/MSES
 
+<img width="960" height="640" alt="convergence" src="https://github.com/user-attachments/assets/36e95fd4-a0be-45f6-8526-fd5a2a8f5a34" />
+
 The surrogate-assisted CMA-ES variants converge significantly faster with fewer evaluations.
 
 📉 **Performance Summary**
 
+<img width="960" height="640" alt="performance_summary" src="https://github.com/user-attachments/assets/6b4ceb34-5be6-4d9d-b8cd-e04bfafe28fd" />
+
 Mean performance (lower = better) across benchmark functions.
 
 🧭 **Novelty vs Performance**
+
+<img width="960" height="640" alt="novelty_vs_performance" src="https://github.com/user-attachments/assets/f9cfb639-3d88-47c4-bc5a-05488ad5d5a4" />
 
 DAE–SMC–CMA achieves high novelty with strong optimization performance.
 
