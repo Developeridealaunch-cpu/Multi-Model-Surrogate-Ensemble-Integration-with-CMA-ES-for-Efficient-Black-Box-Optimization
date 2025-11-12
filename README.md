@@ -381,8 +381,31 @@ This repository is for research and educational use only.
 
 Please cite CMA-ES and surrogate modeling literature in derived publications.
 
-# 🧬 **Citation**
+## 📚 Citations
 
-Hansen, N. (2006). The CMA Evolution Strategy: A Comparing Review.
+If you use this repository in your research, please cite the following foundational works:
 
-Surrogates in Black-Box Optimization — Springer, 2021.
+1. **Nikolaus Hansen (2019).**  
+   *A Global Surrogate Assisted CMA-ES.*  
+   *Proceedings of the Genetic and Evolutionary Computation Conference (GECCO ’19),*  
+   Prague, Czech Republic. ACM, New York, NY, USA.  
+   DOI: [10.1145/3321707.3321842](https://doi.org/10.1145/3321707.3321842)  
+   🧩 Introduces the global surrogate-assisted CMA-ES framework combining linear, diagonal, and quadratic models for adaptive search efficiency:contentReference[oaicite:0]{index=0}.
+
+2. **Lukáš Bajer, Zbyněk Pitra, Jakub Repický, Martin Holeňa (2019).**  
+   *Gaussian Process Surrogate Models for the CMA Evolution Strategy.*  
+   *Evolutionary Computation, MIT Press Journals.*  
+   DOI: [10.1162/evco_a_00244](https://doi.org/10.1162/evco_a_00244)  
+   🧠 Presents Gaussian Process–based surrogate modeling within CMA-ES, including the S-CMA-ES and DTS-CMA-ES algorithms, with extensive COCO benchmark results:contentReference[oaicite:1]{index=1}.
+
+3. **Our Current Work (2025).**  
+   *Multi-Model Surrogate Ensemble + CMA-ES: ESR, DAE–SMC, and MSES Variants.*  
+   Combines ensemble surrogates (RBF, GP, SVR, Polynomial, BNN/DKL) with transformer-based landscape encoders and meta-learned priors for efficient optimization across multimodal, noisy, and hybrid landscapes.
+
+| Paper                   | Contribution to Your Framework                                                                                   |
+| :---------------------- | :--------------------------------------------------------------------------------------------------------------- |
+| **Hansen (2019)**       | Global surrogate-assisted CMA-ES baseline — foundation for ESR–CMA-ES and DAE–SMC reliability layers.            |
+| **Bajer et al. (2019)** | Gaussian Process + CMA-ES (DTS-CMA-ES) — theoretical basis for uncertainty and RDE metric.                       |
+| **Our Work (2025)**    | Extends these ideas with hybrid surrogate ensembles, meta-learning priors, and transformer landscape embeddings. |
+
+
