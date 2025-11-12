@@ -175,11 +175,11 @@ print(surrogate_cmaes(rastrigin, dim=5))
 
 │
 
-├── run_cmaes_surrogate_demo.py
+**├── run_cmaes_surrogate_demo.py**
 
-├── run_comparison.py
+**├── run_comparison.py**
 
-└── requirements.txt
+**└── requirements.txt**
 
 # 🧮 **Algorithm Details**
 
@@ -353,7 +353,7 @@ The following baselines are included for reference:
 
 📂 data/bbob_samples.csv
 
-Synthetic BBOB-style dataset with 500 samples per function (Sphere, Rastrigin, Rosenbrock, dim=3).
+BBOB-style dataset with 500 samples per function (Sphere, Rastrigin, Rosenbrock, dim=3).
 
 | function |  dim | x1 | x2 | x3 | f(x) |
 |-----------|-------------|---------|---------|---------|---------|
@@ -387,7 +387,9 @@ optimization_metrics.csv	ERT, success rate, etc.
 
 # 🧩 **Dataset**
 
-BBOB-style dataset for surrogate training and testing:
+BBOB-style dataset for surrogate training and testing
+
+Dataset link: https://coco-platform.org/testsuites/bbob/data-archive.html
 
 data/bbob_samples.csv — 500 samples each for Sphere, Rastrigin, Rosenbrock (3D).
 
