@@ -199,17 +199,19 @@ print(surrogate_cmaes(rastrigin, dim=5))
 
 **├── surrogate/**
 
-│   ├── surrogate_ensemble.py        # Multi-model ensemble
+│   └── surrogate_ensemble.py        # Multi-model ensemble
 
 │   └── gp_model.py                  # Gaussian Process wrapper
+
+│   └── bnn_stub.py                 # BNN stub
 
 │
 
 **├── optimizer/**
 
-│   ├── cma_es_optimizer.py          # CMA-ES core + surrogate integration
+│   └── cma_es_optimizer.py          # CMA-ES core + surrogate integration
 
-│   ├── acquisition.py               # EI, UCB, LCB functions
+│   └── acquisition.py               # EI, UCB, LCB functions
 
 │   └── baselines.py                 # Pure CMA-ES + baseline methods
 
@@ -217,9 +219,9 @@ print(surrogate_cmaes(rastrigin, dim=5))
 
 **├── benchmarks/**
 
-│   ├── sphere.py
+│   └── sphere.py
 
-│   ├── rastrigin.py
+│   └── rastrigin.py
 
 │   └── rosenbrock.py
 
@@ -227,25 +229,39 @@ print(surrogate_cmaes(rastrigin, dim=5))
 
 **├── tools/**
 
-│   ├── summarize_results.py
+│   └── summarize_results.py
 
-│   ├── plot_results.py
+│   └── plot_results.py
 
-│   ├── plot_convergence.py
+│   └── plot_convergence.py
 
-│   ├── novelty_compare.py
+│   └── novelty_compare.py
 
 │   └── evaluate_metrics.py
 
 │
 
-**├── data/**
+**├── models/**
 
-│   └── bbob_samples.csv             # Benchmark dataset
+│   └── transformer_encoder.py         # PyTorch transformer encoder stub
+
+│   └── vae.py                         # PyTorch VAE stub
 
 │
 
-**├── results/                         # Outputs (CSV + PNG)**
+**├── meta/**
+
+│   └── meta_learner.py                # meta-learner stub
+
+│
+
+**├── data/**
+
+│   └── bbob_samples.csv               # Benchmark dataset
+
+│
+
+**├── results/**                        # Outputs (CSV + PNG)
 
 │   └── comparison.csv
 
@@ -257,7 +273,7 @@ print(surrogate_cmaes(rastrigin, dim=5))
 
 │   └── novelty_performance.csv
 
-│   └── *.png                        # All plots
+│   └── *.png                          # All plots
 
 │
 
@@ -265,7 +281,7 @@ print(surrogate_cmaes(rastrigin, dim=5))
 
 **├── run_comparison.py**
 
-**└── requirements.txt**
+**├── requirements.txt**
 
 ### 📦 Repository Includes
 
@@ -278,6 +294,18 @@ print(surrogate_cmaes(rastrigin, dim=5))
 - 📊 `tools/` → evaluation, plotting, and comparison utilities
   
 - 🧾 `results/` → metrics CSVs + performance plots + novelty graphs
+  
+- `models/` → vae.py           : PyTorch VAE stub (trainable, placeholder).
+  
+- `models/` → transformer_encoder.py : PyTorch transformer encoder stub.
+  
+- `meta/` → meta_learner.py   : Simple numpy-based meta-learner stub returning warm-start params.
+  
+- `surrogate/` → bnn_stub.py  : Simple BNN stub (non-probabilistic placeholder).
+
+These files are **stubs** and do not require additional dependencies to exist as files,
+
+but to run/train them you'll need PyTorch installed in your environment.
   
 - 🧪 Demo scripts: `run_cmaes_surrogate_demo.py`, `run_comparison.py`
 
